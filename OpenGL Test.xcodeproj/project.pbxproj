@@ -12,6 +12,9 @@
 		24DC3FBB1E51E14F00030A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DC3FB91E51E14F00030A5C /* Main.storyboard */; };
 		24DC3FBD1E51E14F00030A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24DC3FBC1E51E14F00030A5C /* Assets.xcassets */; };
 		24DC3FC01E51E14F00030A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DC3FBE1E51E14F00030A5C /* LaunchScreen.storyboard */; };
+		24DC3FC91E51E53900030A5C /* CoreWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 24DC3FC81E51E53900030A5C /* CoreWrapper.mm */; };
+		24DC3FCD1E51E9FF00030A5C /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24DC3FCC1E51E9FF00030A5C /* Scene.cpp */; };
+		24DC3FD01E5206D000030A5C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DC3FCF1E5206D000030A5C /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,14 @@
 		24DC3FBC1E51E14F00030A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24DC3FBF1E51E14F00030A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24DC3FC11E51E14F00030A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24DC3FC71E51E53900030A5C /* OpenGL Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenGL Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		24DC3FC81E51E53900030A5C /* CoreWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreWrapper.mm; sourceTree = "<group>"; };
+		24DC3FCA1E51E57A00030A5C /* CoreWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreWrapper.h; sourceTree = "<group>"; };
+		24DC3FCB1E51E7E300030A5C /* Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = Scene.h; sourceTree = "<group>"; };
+		24DC3FCC1E51E9FF00030A5C /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		24DC3FCF1E5206D000030A5C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		24DC3FD11E52115600030A5C /* linmath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linmath.h; sourceTree = "<group>"; };
+		24DC3FD21E52125B00030A5C /* Matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DC3FD01E5206D000030A5C /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +52,7 @@
 			children = (
 				24DC3FB41E51E14F00030A5C /* OpenGL Test */,
 				24DC3FB31E51E14F00030A5C /* Products */,
+				24DC3FCE1E5206D000030A5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +73,23 @@
 				24DC3FBC1E51E14F00030A5C /* Assets.xcassets */,
 				24DC3FBE1E51E14F00030A5C /* LaunchScreen.storyboard */,
 				24DC3FC11E51E14F00030A5C /* Info.plist */,
+				24DC3FCA1E51E57A00030A5C /* CoreWrapper.h */,
+				24DC3FC81E51E53900030A5C /* CoreWrapper.mm */,
+				24DC3FC71E51E53900030A5C /* OpenGL Test-Bridging-Header.h */,
+				24DC3FCB1E51E7E300030A5C /* Scene.h */,
+				24DC3FCC1E51E9FF00030A5C /* Scene.cpp */,
+				24DC3FD11E52115600030A5C /* linmath.h */,
+				24DC3FD21E52125B00030A5C /* Matrix.h */,
 			);
 			path = "OpenGL Test";
+			sourceTree = "<group>";
+		};
+		24DC3FCE1E5206D000030A5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24DC3FCF1E5206D000030A5C /* OpenGLES.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +124,8 @@
 				TargetAttributes = {
 					24DC3FB11E51E14F00030A5C = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -136,6 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DC3FCD1E51E9FF00030A5C /* Scene.cpp in Sources */,
+				24DC3FC91E51E53900030A5C /* CoreWrapper.mm in Sources */,
 				24DC3FB81E51E14F00030A5C /* ViewController.swift in Sources */,
 				24DC3FB61E51E14F00030A5C /* AppDelegate.swift in Sources */,
 			);
@@ -258,10 +289,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "OpenGL Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gfm.OpenGL-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenGL Test/OpenGL Test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,10 +305,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "OpenGL Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gfm.OpenGL-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenGL Test/OpenGL Test-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +335,7 @@
 				24DC3FC61E51E14F00030A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

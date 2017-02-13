@@ -7,19 +7,34 @@
 //
 
 import UIKit
+import GLKit
 
-class ViewController: UIViewController {
+class ViewController: GLKViewController {
+  
+  lazy var context:EAGLContext = {
+    return EAGLContext(api: .openGLES3)
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    if let view = view as? GLKView {
+      
+      view.context = context
+      setupGL()
+    }
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  fileprivate func setupGL() {
+    EAGLContext.setCurrent(context)
+    
+    CoreWrapper.onSurfaceCreated();
+    CoreWrapper.onSurfaceChanged(300,h:300);
   }
-
-
+  
+  override func glkView(_ view: GLKView, drawIn rect: CGRect) {
+    CoreWrapper.onDrawFrame();
+  }
+  
 }
 
