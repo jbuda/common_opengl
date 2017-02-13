@@ -1,1 +1,1 @@
-# common_opengl
+OpenGL test sharing common code between iOS and Android
