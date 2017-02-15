@@ -8,9 +8,6 @@
 
 #include <stdio.h>
 
-//Scene {
-//public:
-  void onSurfaceCreated();
-  void onSurfaceChanged(int width,int height);
+void onSurfaceCreated();
+void onSurfaceChanged(int width,int height);
 void onDrawFrame();
-//};

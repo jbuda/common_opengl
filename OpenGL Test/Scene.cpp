@@ -8,8 +8,7 @@
 
 #include "Scene.h"
 #include <OpenGLES/ES3/gl.h>
-#include "Matrix.h"
-//#include "linmath.h"
+#include "MatrixMath.h"
 
 static mat4x4 projectionMatrix;
 
@@ -21,7 +20,7 @@ void onSurfaceCreated() {
 void onSurfaceChanged(int width,int height) {
   glViewport(0, 0, width, height);
   
-  mat4x4_perspective(projectionMatrix, 90, 0.5f, 1.0f, 10.0f);
+  mat4x4PerspectiveProj(projectionMatrix, 90, 0.5f, 1.0f, 10.0f);
 }
 
 void onDrawFrame() {

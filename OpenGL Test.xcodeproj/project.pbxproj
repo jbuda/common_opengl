@@ -33,6 +33,7 @@
 		24DC3FCF1E5206D000030A5C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		24DC3FD11E52115600030A5C /* linmath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linmath.h; sourceTree = "<group>"; };
 		24DC3FD21E52125B00030A5C /* Matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		24F542931E525DFC000089B8 /* MatrixMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixMath.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 				24DC3FCC1E51E9FF00030A5C /* Scene.cpp */,
 				24DC3FD11E52115600030A5C /* linmath.h */,
 				24DC3FD21E52125B00030A5C /* Matrix.h */,
+				24F542931E525DFC000089B8 /* MatrixMath.h */,
 			);
 			path = "OpenGL Test";
 			sourceTree = "<group>";
